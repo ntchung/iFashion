@@ -1,0 +1,12 @@
+/Library/
+/Builds/
+/Temp/
+*.csproj
+*.pidb
+*.sln
+*.userprefs
+*.unityproj
+.DS_Store
+/raw/
+ClassLibrary/NGUI/obj/
+*.suo

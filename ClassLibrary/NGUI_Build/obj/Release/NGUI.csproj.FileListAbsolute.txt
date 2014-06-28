@@ -1,0 +1,6 @@
+D:\CastleAttack\ClassLibrary\NGUI_Build\bin\Release\NGUI.dll
+D:\CastleAttack\ClassLibrary\NGUI_Build\bin\Release\NGUI.pdb
+D:\CastleAttack\ClassLibrary\NGUI_Build\bin\Release\UnityEngine.dll
+D:\CastleAttack\ClassLibrary\NGUI_Build\obj\Release\NGUI.csprojResolveAssemblyReference.cache
+D:\CastleAttack\ClassLibrary\NGUI_Build\obj\Release\NGUI.dll
+D:\CastleAttack\ClassLibrary\NGUI_Build\obj\Release\NGUI.pdb
