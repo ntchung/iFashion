@@ -8,9 +8,10 @@ public class BuildPlatform
 {
 	static string m_sDDLLocation = Application.dataPath + "/../ClassLibrary/";
 	
-	static string m_sBuildPath =  Application.dataPath + "/../Builds/CastleAttack.exe";
+	static string m_sBuildPath =  Application.dataPath + "/../Builds/iFashion.exe";
+	static string m_sAndroidBuildPath =  Application.dataPath + "/../Builds/iFashion.apk";
 	
-	static string[] m_Scenes = { "Assets/Scenes/Splash.unity", "Assets/Scenes/Main.unity" };
+	static string[] m_Scenes = { "Assets/Scenes/Main.unity" };
 	
 	[MenuItem("Tools/Build StandAlone")]
 	private static void BuildStandAlone()  {
@@ -33,21 +34,23 @@ public class BuildPlatform
 		
 		//build the file 
 		BuildOptions Options = BuildOptions.None;		
-		PlayerSettings.Android.keystoreName = Application.dataPath + "/../kinoastudios.keystore";
+		PlayerSettings.Android.keystoreName = Application.dataPath + "/../fairylogic.keystore";
 		PlayerSettings.Android.keystorePass = "123456";
-		PlayerSettings.Android.keyaliasName = "kinoastudios";
+		PlayerSettings.Android.keyaliasName = "fairylogic";
 		PlayerSettings.Android.keystorePass = "123456";
 				
 		PlayerSettings.keystorePass = "123456";
 		PlayerSettings.keyaliasPass = "123456";
 		
-		BuildPipeline.BuildPlayer(m_Scenes, Application.dataPath + "/../Builds/CastleAttack.apk", BuildTarget.Android, Options);
+		BuildPipeline.BuildPlayer(m_Scenes, m_sAndroidBuildPath, BuildTarget.Android, Options);
 		
 		RestoreWorkDLLs();
 	}	
 	
 	private static void UseBuildDLLs()
 	{
+		System.IO.Directory.CreateDirectory(Application.dataPath + "/../Builds");
+	
 		// Use working DLLs
 		File.Copy(m_sDDLLocation + "NGUI_Build.dll", Application.dataPath + "/Externals/NGUI/NGUI.dll", true);
 		
