@@ -10,4 +10,5 @@ public class ItemDetailsController : MonoBehaviour {
 	public GameObject AddCartButton;
 	
 	public GameObject ProductObject;
+	public Product ProductReference;
 }

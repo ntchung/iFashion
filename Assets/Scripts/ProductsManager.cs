@@ -20,7 +20,9 @@ public class ProductsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {		
+		LoadProduct("OutwearProduct1");
 		LoadProduct("TopProduct1");
+		LoadProduct("DressProduct1");
 	}
 	
 	private void LoadProduct(string name)
@@ -31,5 +33,18 @@ public class ProductsManager : MonoBehaviour {
 	public List<Product> Products
 	{
 		get { return m_products; }
+	}
+	
+	public Product Find(string name)
+	{
+		foreach( Product product in m_products )
+		{
+			if( product.name.Equals(name) )
+			{
+				return product;
+			}
+		}
+		
+		return null;
 	}
 }

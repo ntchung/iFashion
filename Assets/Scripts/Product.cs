@@ -9,6 +9,7 @@ public class Product : MonoBehaviour {
 	public string Title;
 	
 	public UI2DSprite Sprite2D;	
+	public Sprite WearingSprite;
 }
 
 public enum EFittingPosition

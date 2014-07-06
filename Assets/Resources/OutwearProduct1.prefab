@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
-  - 212: {fileID: 21200000}
   - 114: {fileID: 11400002}
+  - 212: {fileID: 21200000}
+  - 114: {fileID: 11400000}
   m_Layer: 5
-  m_Name: TopProduct1
+  m_Name: OutwearProduct1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +31,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93669e66855cc86479f0a56f78e4d514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Category: 0
+  FittingPosition: 1
+  Price: $60.00
+  Title: Nike Jacket
+  Sprite2D: {fileID: 11400002}
+  WearingSprite: {fileID: 21300000, guid: 574ef5f40e03a6b4a87d0f1da5d37dee, type: 3}
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,34 +77,17 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 117
+  mWidth: 157
   mHeight: 200
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 2
-  aspectRatio: .583999991
-  mSprite: {fileID: 21300000, guid: 026af2bc2abde4048985e55a9f861e1c, type: 3}
+  aspectRatio: .785000026
+  mSprite: {fileID: 21300000, guid: 3b17af12678cce14dbb30427ba34983a, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   nextSprite: {fileID: 0}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93669e66855cc86479f0a56f78e4d514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Category: 2
-  FittingPosition: 3
-  Price: $30.00
-  Title: Shirt & Skirt
-  Sprite2D: {fileID: 11400000}
-  WearingSprite: {fileID: 21300000, guid: d9bd1d6215225a24eb9346c6a8e90731, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

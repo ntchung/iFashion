@@ -9,7 +9,8 @@ public class UIStateShop : UIState {
 	{
 		g_instance = this;
 		
-		m_currentCategory = ECategory.Outwear;
+		m_currentCategory = ECategory.Top;
+		m_nextCategory = ECategory.Outwear;
 	}
 	
 	public static UIStateShop Instance
@@ -50,7 +51,7 @@ public class UIStateShop : UIState {
 
 	private void Browse(ECategory category)	
 	{
-		float x = 210;
+		float x = 205;
 		float y = 200;
 		float height = 310;
 		
@@ -76,6 +77,7 @@ public class UIStateShop : UIState {
 				detailsController.PriceLabel.text = product.Price;
 				detailsController.TitleLabel.text = product.Title;
 				detailsController.ProductObject = prod;
+				detailsController.ProductReference = product;
 				
 				UIEventListener.Get(detailsController.ZoomButton).onClick += (obj) =>
 				{
@@ -84,7 +86,7 @@ public class UIStateShop : UIState {
 				
 				UIEventListener.Get(detailsController.AddCartButton).onClick += (obj) =>
 				{
-					OnAddCartClicked(obj);
+					OnAddCartClicked(obj.transform.parent.gameObject);
 				};
 				
 				y += height;
@@ -116,11 +118,12 @@ public class UIStateShop : UIState {
 		Product prd = prod.GetComponent<Product>();
 		prd.Sprite2D.depth = 25;
 		prd.Sprite2D.height = 600;
-		int temp = (int)prd.Category;
 	}
 	
 	private void OnAddCartClicked(GameObject obj)
 	{
+		ItemDetailsController detailsController = obj.GetComponent<ItemDetailsController>();
+		UIStateBag.Instance.AddProduct(detailsController.ProductReference);
 	}
 	
 	public void ExitZoom()

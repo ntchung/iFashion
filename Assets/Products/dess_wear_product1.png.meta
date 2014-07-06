@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f47ce065b665394199b65f4d3f0749e
+guid: a2958f1c6544ff446a742296f162887c
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -42,5 +42,5 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
-  spritePackingTag: 
+  spritePackingTag: dress
   userData: 

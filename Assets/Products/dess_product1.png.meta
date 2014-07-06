@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f47ce065b665394199b65f4d3f0749e
+guid: a27896d6e9bb7f44bb98eef718f05bc9
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -30,7 +30,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -41,6 +41,16 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-  spritePackingTag: 
+    sprites:
+    - name: dess_product1_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 110
+        width: 340
+        height: 803
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: dress
   userData: 

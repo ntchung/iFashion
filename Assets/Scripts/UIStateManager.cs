@@ -7,7 +7,7 @@ public class UIStateManager : MonoBehaviour {
 	
 	void Awake()
 	{
-		g_instance = this;
+		g_instance = this;		
 	}
 	
 	public static UIStateManager Instance
@@ -31,7 +31,7 @@ public class UIStateManager : MonoBehaviour {
 		m_currentState = Shop;
 		m_currentState.OnEnter();
 		
-		m_nextState = m_currentState;
+		m_nextState = m_currentState;		
 	}
 	
 	// Update is called once per frame
@@ -62,5 +62,28 @@ public class UIStateManager : MonoBehaviour {
 	public void ChangeToStateBag()
 	{
 		m_nextState = Bag;
+	}
+	
+	void OnApplicationPause()
+	{
+		StorePrefs();		
+	}	
+	
+	void OnApplicationQuit()
+	{
+		StorePrefs();
+	}
+	
+	private void StorePrefs()
+	{
+		if( UIStateBag.Instance != null )
+		{
+			UIStateBag.Instance.StorePrefs();
+		}
+		if( UIStateCloset.Instance != null )
+		{
+			UIStateCloset.Instance.StorePrefs();
+		}
+		PlayerPrefs.Save();
 	}
 }
