@@ -11,7 +11,7 @@ public class BuildPlatform
 	static string m_sBuildPath =  Application.dataPath + "/../Builds/iFashion.exe";
 	static string m_sAndroidBuildPath =  Application.dataPath + "/../Builds/iFashion.apk";
 	
-	static string[] m_Scenes = { "Assets/Scenes/Main.unity" };
+	static string[] m_Scenes = { "Assets/Scenes/Login.unity", "Assets/Scenes/Main.unity" };
 	
 	[MenuItem("Tools/Build StandAlone")]
 	private static void BuildStandAlone()  {
@@ -44,6 +44,16 @@ public class BuildPlatform
 		
 		BuildPipeline.BuildPlayer(m_Scenes, m_sAndroidBuildPath, BuildTarget.Android, Options);
 		
+		RestoreWorkDLLs();
+	}	
+	
+	[MenuItem("Tools/Switch Build DLLs")]
+	private static void SwitchBuildDLLs()  {
+		UseBuildDLLs();		
+	}	
+	
+	[MenuItem("Tools/Switch Editor DLLs")]
+	private static void SwitchEditorDLLs()  {
 		RestoreWorkDLLs();
 	}	
 	

@@ -60,6 +60,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400012}
   m_Layer: 5
   m_Name: ButtonRemove
   m_TagString: Untagged
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134, y: 350.499969, z: 0}
+  m_LocalPosition: {x: 129, y: 278, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -128,7 +129,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14, y: 14, z: 0}
+  m_Size: {x: 32, y: 32, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -197,8 +198,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 400
-  mHeight: 800
+  mWidth: 350
+  mHeight: 700
   mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -239,14 +240,14 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 302
-  mHeight: 735
+  mHeight: 600
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .410884351
+  aspectRatio: .50333333
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: window2
+  mSpriteName: window3
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -270,8 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 100006}
-  hover: {r: 1, g: 0, b: 0, a: 1}
-  pressed: {r: 1, g: 0, b: 0, a: 1}
+  hover: {r: 1, g: 1, b: 1, a: 1}
+  pressed: {r: .996078432, g: .996078432, b: .996078432, a: 1}
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
@@ -294,24 +295,24 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 400004}
     relative: 1
-    absolute: -24
+    absolute: -38
   rightAnchor:
     target: {fileID: 400004}
     relative: 1
-    absolute: -10
+    absolute: -6
   bottomAnchor:
     target: {fileID: 400004}
     relative: 1
-    absolute: -24
+    absolute: -38
   topAnchor:
     target: {fileID: 400004}
     relative: 1
-    absolute: -10
+    absolute: -6
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 14
-  mHeight: 14
+  mWidth: 32
+  mHeight: 32
   mDepth: 3
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
@@ -319,7 +320,7 @@ MonoBehaviour:
   aspectRatio: 1
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
   mSpriteName: icon_close
-  mType: 1
+  mType: 0
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
@@ -343,6 +344,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Overlay: {fileID: 100000}
   ButtonRemove: {fileID: 100006}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 513407981, guid: 685ce059404eb984f9b32d79a8d9c967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 0}
+  hover: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
+  pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
+  duration: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

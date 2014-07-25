@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 3f47ce065b665394199b65f4d3f0749e
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: bikini_model
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

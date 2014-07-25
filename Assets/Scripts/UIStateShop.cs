@@ -25,19 +25,31 @@ public class UIStateShop : UIState {
 	public GameObject ItemDetailsPrefab;
 	public GameObject ZoomView;
 	public GameObject ZoomWindow;
+	
+	private GameObject m_zoomedProduct;
+	private Vector3 m_startingPosition;
 
 	public override void OnEnter()
 	{
+		UIScrollView scrollView = BrowseView.GetComponent<UIScrollView>();
+		m_startingPosition = scrollView.panel.cachedTransform.localPosition;
 	}
 	
 	public override void OnUpdate()
 	{
 		if( m_nextCategory != m_currentCategory )
 		{
-			ClearBrowse();
-			Browse(m_nextCategory);
 			m_currentCategory = m_nextCategory;
+			StartCoroutine(SwitchCategory());			
 		}
+	}
+	
+	private IEnumerator SwitchCategory()
+	{		
+		ClearBrowse();
+		
+		yield return new WaitForEndOfFrame();
+		Browse(m_nextCategory);		
 	}
 	
 	public override void OnExit()
@@ -56,8 +68,6 @@ public class UIStateShop : UIState {
 		float height = 310;
 		
 		UIScrollView scrollView = BrowseView.GetComponent<UIScrollView>();
-		scrollView.ResetPosition();
-	
 		foreach( Product product in ProductsManager.Instance.Products )
 		{
 			if( product.Category == category )
@@ -111,6 +121,8 @@ public class UIStateShop : UIState {
 		ItemDetailsController detailsController = obj.GetComponent<ItemDetailsController>();
 		
 		GameObject prod = GameObject.Instantiate(detailsController.ProductObject) as GameObject;
+		m_zoomedProduct = prod;
+		
 		prod.transform.parent = ZoomWindow.transform;
 		prod.transform.localPosition = new Vector3(0, 0, 0);
 		prod.transform.localScale = Vector3.one;
@@ -128,6 +140,7 @@ public class UIStateShop : UIState {
 	
 	public void ExitZoom()
 	{
+		GameObject.Destroy(m_zoomedProduct);
 		ZoomView.SetActive(false);		
 	}
 }

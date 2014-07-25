@@ -11,6 +11,7 @@ public class UIStateBag : UIState {
 	public GameObject FittingView;
 	
 	private List<Product> m_shoppingBag = new List<Product>();
+	private List<BagItemController> m_controllers = new List<BagItemController> ();
 	private WearingFigure m_manequin = new WearingFigure();
 	private bool m_needRefreshList = false;	
 	private bool m_needRefreshFitting = false;	
@@ -25,6 +26,7 @@ public class UIStateBag : UIState {
 	void Awake()
 	{
 		g_instance = this;		
+		m_controllers.Clear ();
 	}
 
 	public override void OnEnter()
@@ -44,19 +46,26 @@ public class UIStateBag : UIState {
 	{
 		if( m_needRefreshList )
 		{
-			ClearBrowse();
-			Browse(m_isFreshlyEntered);
-			m_isFreshlyEntered = false;
-		
 			m_needRefreshList = false;
+			
+			StartCoroutine(RefreshList());
 		}
 		
 		if( m_needRefreshFitting )
 		{
 			m_manequin.Clear(FittingView);
-			m_manequin.Fit(FittingView, 800);			
+			m_manequin.Fit(FittingView, 700);			
 			m_needRefreshFitting = false;
 		}
+	}
+	
+	private IEnumerator RefreshList()
+	{
+		ClearBrowse();
+		
+		yield return new WaitForEndOfFrame();
+		Browse(m_isFreshlyEntered);
+		m_isFreshlyEntered = false;
 	}
 	
 	public override void OnExit()
@@ -97,8 +106,7 @@ public class UIStateBag : UIState {
 		m_manequin.Add(detailsController.ProductReference);	
 		m_needRefreshFitting = true;		
 		
-		detailsController.UntryButton.SetActive(true);
-		detailsController.TryOnButton.SetActive(false);
+		RefreshWearingButtons();
 	}
 	
 	private void OnUnTryClicked(GameObject obj)
@@ -107,8 +115,7 @@ public class UIStateBag : UIState {
 		m_manequin.Remove(detailsController.ProductReference);	
 		m_needRefreshFitting = true;		
 		
-		detailsController.TryOnButton.SetActive(true);
-		detailsController.UntryButton.SetActive(false);
+		RefreshWearingButtons();
 	}
 	
 	private void Browse(bool resetPosition)
@@ -118,10 +125,8 @@ public class UIStateBag : UIState {
 		float height = 210;
 				
 		UIScrollView scrollView = BrowseView.GetComponent<UIScrollView>();
-		if( resetPosition )
-		{
-			scrollView.ResetPosition();
-		}
+
+		m_controllers.Clear ();
 		
 		foreach( Product product in m_shoppingBag )
 		{
@@ -144,17 +149,8 @@ public class UIStateBag : UIState {
 			detailsController.PriceLabel.text = product.Price;
 			detailsController.TitleLabel.text = product.Title;
 			detailsController.ProductReference = product;
-			
-			if( m_manequin.IsWearing(product) )
-			{
-				detailsController.TryOnButton.SetActive(false);
-				detailsController.UntryButton.SetActive(true);
-			}
-			else
-			{
-				detailsController.TryOnButton.SetActive(true);
-				detailsController.UntryButton.SetActive(false);
-			}
+
+			m_controllers.Add(detailsController);
 			
 			UIEventListener.Get(detailsController.RemoveButton).onClick += (obj) =>
 			{
@@ -173,13 +169,29 @@ public class UIStateBag : UIState {
 			
 			y += height;
 		}
+
+		RefreshWearingButtons ();
 		
 		if( resetPosition )
 		{
 			scrollView.ResetPosition();
 		}
 	}
-	
+
+	private void RefreshWearingButtons()
+	{
+		foreach (BagItemController detailsController in m_controllers) 
+		{
+			if (m_manequin.IsWearing (detailsController.ProductReference)) {
+				detailsController.TryOnButton.SetActive (false);
+				detailsController.UntryButton.SetActive (true);
+			} else {
+				detailsController.TryOnButton.SetActive (true);
+				detailsController.UntryButton.SetActive (false);
+			}
+		}
+	}
+
 	private void ClearBrowse()
 	{		
 		foreach( Transform child in BrowseView.transform )

@@ -20,9 +20,25 @@ public class ProductsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {		
+		LoadProduct("AccProduct1");
+		LoadProduct("AccProduct2");
+	
 		LoadProduct("OutwearProduct1");
+		
 		LoadProduct("TopProduct1");
+		LoadProduct("TopProduct2");
+		LoadProduct("TopProduct3");
+		
 		LoadProduct("DressProduct1");
+		LoadProduct("DressProduct2");
+		LoadProduct("DressProduct3");
+		LoadProduct("DressProduct4");
+		LoadProduct("DressProduct5");
+		LoadProduct("DressProduct6");
+		
+		LoadProduct("HandbagProduct1");
+		LoadProduct("HandbagProduct2");
+		LoadProduct("HandbagProduct3");
 	}
 	
 	private void LoadProduct(string name)

@@ -59,6 +59,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400014}
   m_Layer: 5
   m_Name: ButtonRemove
   m_TagString: Untagged
@@ -75,7 +76,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400016}
-  - 114: {fileID: 11400014}
   - 65: {fileID: 6500002}
   - 114: {fileID: 11400012}
   m_Layer: 5
@@ -127,7 +127,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400014}
   - 114: {fileID: 11400026}
-  - 114: {fileID: 11400024}
   - 65: {fileID: 6500004}
   - 114: {fileID: 11400022}
   m_Layer: 5
@@ -250,7 +249,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 12, z: 0}
+  m_Size: {x: 32, y: 32, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6500002
 BoxCollider:
@@ -318,7 +317,7 @@ MonoBehaviour:
   mFont: {fileID: 0}
   mText: Shirt & Skirt
   mFontSize: 14
-  mFontStyle: 0
+  mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
@@ -328,7 +327,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: .735294104, g: .735294104, b: .735294104, a: 1}
   mGradientBottom: {r: .220588207, g: .220588207, b: .220588207, a: 1}
   mSpacingX: 0
@@ -366,7 +365,7 @@ MonoBehaviour:
     relative: 1
     absolute: -25
   updateAnchors: 1
-  mColor: {r: .845588207, g: .124351226, b: .124351226, a: 1}
+  mColor: {r: 1, g: .213235319, b: .213235319, a: 1}
   mPivot: 1
   mWidth: 170
   mHeight: 20
@@ -380,11 +379,11 @@ MonoBehaviour:
   mFont: {fileID: 0}
   mText: $250.00
   mFontSize: 14
-  mFontStyle: 0
+  mFontStyle: 2
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 1
+  mEffectStyle: 0
   mEffectColor: {r: .264705896, g: .105103821, b: .105103821, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
@@ -412,8 +411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 100006}
-  hover: {r: 1, g: 0, b: 0, a: 1}
-  pressed: {r: 1, g: 0, b: 0, a: 1}
+  hover: {r: .996078432, g: .996078432, b: .996078432, a: 1}
+  pressed: {r: .992156863, g: .992156863, b: .992156863, a: 1}
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
@@ -436,24 +435,24 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 400010}
     relative: 1
-    absolute: -24
+    absolute: -34
   rightAnchor:
     target: {fileID: 400010}
     relative: 1
-    absolute: -12
+    absolute: -2
   bottomAnchor:
     target: {fileID: 400010}
     relative: 0
-    absolute: 12
+    absolute: 2
   topAnchor:
     target: {fileID: 400010}
     relative: 0
-    absolute: 24
+    absolute: 34
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 12
-  mHeight: 12
+  mWidth: 32
+  mHeight: 32
   mDepth: 13
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
@@ -517,25 +516,25 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .623529434, g: .929411769, b: .541176498, a: 1}
   mPivot: 4
-  mWidth: 48
-  mHeight: 12
+  mWidth: 54
+  mHeight: 14
   mDepth: 10
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4
+  aspectRatio: 3.85714293
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Take off
-  mFontSize: 12
-  mFontStyle: 0
+  mFontSize: 14
+  mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 1
+  mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
@@ -568,9 +567,9 @@ MonoBehaviour:
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
-  hoverSprite: 
-  pressedSprite: 
-  disabledSprite: 
+  hoverSprite: green_button_down
+  pressedSprite: green_button_down
+  disabledSprite: green_button
   pixelSnap: 0
   onClick: []
 --- !u!114 &11400014
@@ -578,13 +577,13 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
+  m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 513407981, guid: 685ce059404eb984f9b32d79a8d9c967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 400008}
+  tweenTarget: {fileID: 0}
   hover: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
   pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
   duration: .200000003
@@ -626,7 +625,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 3.33333325
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: button
+  mSpriteName: green_button
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -666,25 +665,25 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .73556906, g: 1, b: .45588237, a: 1}
   mPivot: 4
-  mWidth: 36
-  mHeight: 12
+  mWidth: 44
+  mHeight: 14
   mDepth: 10
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3
+  aspectRatio: 3.14285707
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Try on
-  mFontSize: 12
-  mFontStyle: 0
+  mFontSize: 14
+  mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 1
+  mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
@@ -738,7 +737,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: .850000024
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: window2
+  mSpriteName: window1
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -767,26 +766,11 @@ MonoBehaviour:
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
-  hoverSprite: 
-  pressedSprite: 
-  disabledSprite: 
+  hoverSprite: green_button_down
+  pressedSprite: green_button_down
+  disabledSprite: green_button
   pixelSnap: 0
   onClick: []
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 513407981, guid: 685ce059404eb984f9b32d79a8d9c967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 400014}
-  hover: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
-  pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
-  duration: .200000003
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -825,7 +809,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 3.33333325
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: button
+  mSpriteName: green_button
   mType: 1
   mFillDirection: 4
   mFillAmount: 1

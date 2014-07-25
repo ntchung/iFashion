@@ -60,7 +60,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 114: {fileID: 11400010}
-  - 114: {fileID: 11400006}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400004}
   m_Layer: 5
@@ -110,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -165, y: -120, z: 0}
+  m_LocalPosition: {x: -150, y: -120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
@@ -146,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80, y: -120, z: 0}
+  m_LocalPosition: {x: 82.5, y: -120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -175,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -165, y: 139.999985, z: 0}
+  m_LocalPosition: {x: -5, y: 140, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400010}
@@ -190,7 +189,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 150, y: 40, z: 0}
+  m_Size: {x: 145, y: 50, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6500002
 BoxCollider:
@@ -333,26 +332,11 @@ MonoBehaviour:
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   dragHighlight: 0
-  hoverSprite: 
-  pressedSprite: 
-  disabledSprite: 
+  hoverSprite: green_button_down
+  pressedSprite: green_button_down
+  disabledSprite: green_button
   pixelSnap: 0
   onClick: []
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 513407981, guid: 685ce059404eb984f9b32d79a8d9c967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 0}
-  hover: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
-  pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
-  duration: .200000003
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,25 +365,25 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .703408539, g: 1, b: .389705896, a: 1}
   mPivot: 4
-  mWidth: 80
-  mHeight: 16
+  mWidth: 96
+  mHeight: 18
   mDepth: 9
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5
+  aspectRatio: 5.33333349
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Add to Cart
-  mFontSize: 16
-  mFontStyle: 0
+  mFontSize: 18
+  mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
-  mEffectStyle: 1
+  mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
@@ -429,31 +413,31 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 400010}
     relative: 1
-    absolute: -170
+    absolute: -150
   rightAnchor:
     target: {fileID: 400010}
     relative: 1
-    absolute: -20
+    absolute: -5
   bottomAnchor:
     target: {fileID: 400010}
     relative: 0
-    absolute: 10
+    absolute: 5
   topAnchor:
     target: {fileID: 400010}
     relative: 0
-    absolute: 50
+    absolute: 55
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 150
-  mHeight: 40
+  mWidth: 145
+  mHeight: 50
   mDepth: 8
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.75
+  aspectRatio: 2.9000001
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: button
+  mSpriteName: green_button
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -481,6 +465,7 @@ MonoBehaviour:
   ZoomButton: {fileID: 100002}
   AddCartButton: {fileID: 100006}
   ProductObject: {fileID: 0}
+  ProductReference: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,7 +504,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 1.06666672
   mAtlas: {fileID: 11400000, guid: ee7b1f78d4e2d024da0e20b07bff5fe7, type: 2}
-  mSpriteName: window2
+  mSpriteName: window3
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -597,10 +582,10 @@ MonoBehaviour:
     absolute: -10
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
-  mPivot: 0
+  mPivot: 1
   mWidth: 290
   mHeight: 40
-  mDepth: 12
+  mDepth: 100
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -610,7 +595,7 @@ MonoBehaviour:
   mFont: {fileID: 0}
   mText: Shirt & Skirt
   mFontSize: 18
-  mFontStyle: 0
+  mFontStyle: 1
   mAlignment: 0
   mEncoding: 1
   mMaxLineCount: 0
@@ -620,7 +605,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 1
+  mApplyGradient: 0
   mGradientTop: {r: .735294104, g: .735294104, b: .735294104, a: 1}
   mGradientBottom: {r: .220588207, g: .220588207, b: .220588207, a: 1}
   mSpacingX: 0

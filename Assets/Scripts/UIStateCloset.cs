@@ -40,12 +40,20 @@ public class UIStateCloset : UIState {
 	{
 		if( m_needRefreshList )
 		{
-			ClearBrowse();
-			Browse(m_freshlyEntered);
-			m_freshlyEntered = false;
-		
+			m_freshlyEntered = false;			
+			
+			StartCoroutine(RefreshList());
+			
 			m_needRefreshList = false;
 		}
+	}
+	
+	private IEnumerator RefreshList()
+	{
+		ClearBrowse();
+		
+		yield return new WaitForEndOfFrame();
+		Browse(m_freshlyEntered);		
 	}
 	
 	public override void OnExit()
@@ -72,11 +80,7 @@ public class UIStateCloset : UIState {
 		float width = 310;
 		
 		UIScrollView scrollView = BrowseView.GetComponent<UIScrollView>();
-		if( resetPosition )
-		{
-			scrollView.ResetPosition();
-		}
-		
+
 		foreach( WearingFigure figure in m_manequins )
 		{
 			GameObject figView = GameObject.Instantiate(FigureViewPrefab) as GameObject;				
@@ -86,7 +90,7 @@ public class UIStateCloset : UIState {
 			figView.transform.localScale = Vector3.one;								
 			
 			ClosetItemController controller = figView.GetComponent<ClosetItemController>();
-			figure.Fit(controller.Overlay, 800);
+			figure.Fit(controller.Overlay, 700);
 			controller.Reference = figure;
 			
 			UIEventListener.Get(controller.ButtonRemove).onClick += (obj) =>
